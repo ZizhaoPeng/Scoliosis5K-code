@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=77.0.3"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "scoliosis5k"
+version = "0.1.0"
+description = "Paired RGB and silhouette gait classification for Scoliosis5K"
+readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE"]
+requires-python = ">=3.11,<3.15"
+dependencies = [
+    "numpy>=1.24,<3",
+    "opencv-python-headless>=4.8,<5",
+    "scikit-learn>=1.4,<2",
+    "torch>=2.6,<3",
+]
+
+[project.optional-dependencies]
+test = ["pytest>=8,<10"]
+
+[tool.setuptools.packages.find]
+include = ["scoliosis5k*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

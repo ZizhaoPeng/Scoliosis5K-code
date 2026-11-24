@@ -1,0 +1,27 @@
+cff-version: 1.2.0
+message: "Please cite the Scoliosis5K study when using this software."
+type: software
+title: "Scoliosis5K reference implementation"
+authors:
+  - name: "Scoliosis5K contributors"
+repository-code: "https://github.com/ZizhaoPeng/Scoliosis5K-code"
+license: MIT
+preferred-citation:
+  type: unpublished
+  title: "Scoliosis5K: Multimodal Gait Analysis via Clip-Conditioned RGB-Silhouette Fusion"
+  year: 2026
+  authors:
+    - family-names: Peng
+      given-names: Zizhao
+    - family-names: Wang
+      given-names: Zihan
+    - family-names: Zhou
+      given-names: Zirui
+    - family-names: Lv
+      given-names: Zheng
+    - family-names: Wang
+      given-names: Yan
+    - family-names: Li
+      given-names: Ping
+    - family-names: An
+      given-names: Fengwei
