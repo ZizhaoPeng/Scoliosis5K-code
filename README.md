@@ -1,12 +1,12 @@
 # Scoliosis5K
 
-Scoliosis5K contains 4,998 corridor-walking recordings from 3,010 participants at nine clinical and school sites. Each recording pairs RGB crops with silhouettes and 25 two-dimensional pose landmarks. This repository contains the reference implementation for *Scoliosis5K: Multimodal Gait Analysis via Clip-Conditioned RGB-Silhouette Fusion*.
+Scoliosis5K contains 4,998 corridor-walking recordings from 3,010 participants at nine clinical and school sites. Each recording pairs privacy-processed RGB foreground frames with silhouettes and 25 two-dimensional pose landmarks. This repository contains the reference implementation for *Scoliosis5K: Multimodal Gait Analysis via Clip-Conditioned RGB-Silhouette Fusion*.
 
 [Project website](https://zizhaopeng.github.io/Scoliosis5K-site/) · [Request dataset access](https://zizhaopeng.github.io/Scoliosis5K-site/#access) · [Preprint (arXiv v1)](https://arxiv.org/abs/2611.26849v1) · [Model and evaluation](REPRODUCIBILITY.md)
 
 ## Dataset access
 
-Use the [dataset access page](https://zizhaopeng.github.io/Scoliosis5K-site/#access) to download the agreement and submit a research request. Approved researchers receive access to the encrypted, head-masked RGB and paired silhouette/pose archives. Include any request for the study fold assignments in your application.
+Use the [dataset access page](https://zizhaopeng.github.io/Scoliosis5K-site/#access) to download the agreement and submit a research request. Approved researchers receive access to the encrypted RGB foreground frames with a black background and opaque gray head mask, plus paired silhouette/pose archives. Include any request for the study fold assignments in your application.
 
 ## Quick start
 
@@ -39,10 +39,10 @@ See [model inputs, dependency setup, and evaluation](REPRODUCIBILITY.md) for the
 
 The model reads 24-frame RGB and silhouette windows. A regional RGB classifier reads one higher-resolution frame per window.
 
-The internal study used 1,628 recordings from 988 participants, with five participant-disjoint folds and three training seeds. Averaging over the three seeds gave 83.77% participant accuracy and 79.91% macro-F1. The final branch combination was evaluated on the same folds used to inspect the component results. The official dataset test partition was held out.
+The internal study used 1,628 recordings from 988 participants, with five participant-disjoint folds and three training seeds. Across three seeds, the model achieved 83.84 ± 0.37% participant accuracy and 79.94 ± 0.61% macro-F1. The final branch combination was evaluated on the same folds used to inspect the component results. The official dataset test partition was held out. The reported study scores use study-retained RGB inputs; the public RGB archive uses a privacy-processed foreground representation.
 
 ## Citation and license
 
-The current manuscript lists Zizhao Peng, Zihan Wang, Zirui Zhou, Zheng Lv, Yan Wang, Ping Li and Fengwei An. The public preprint (v1) lists six authors. [Citation metadata](CITATION.cff) · [arXiv v1](https://arxiv.org/abs/2611.26849v1)
+The current manuscript author list is Zizhao Peng, Zihan Wang, Zheng Lv, Yan Wang, Ping Li and Fengwei An. The linked preprint is version 1. [Citation metadata](CITATION.cff) · [arXiv v1](https://arxiv.org/abs/2611.26849v1)
 
 The source code and its software documentation are licensed under the [MIT License](LICENSE). Upstream backbones and pretrained weights retain their original licenses. Dataset access and use are governed by the data-use agreement.
